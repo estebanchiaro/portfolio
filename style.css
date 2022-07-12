@@ -1,0 +1,662 @@
+
+:root {
+    /* background */
+
+    --bg: linear-gradient(100deg, rgb(48, 0, 78), rgb(27, 0, 62), black);
+    --text: rgb(255, 255, 255);
+
+    /* colors */
+
+    --white: #fff;
+    --black: #000;
+    --blue-100: #c2e3f6;
+    --blue-200: #84dfff;
+    --blue-300: #01afc1;
+    --blue-400: #06435e;
+    --blue-500: #04293a;
+    --blue-700: #041c32;
+    --teal: #19bc9c;
+   
+
+    /* responsive font sizes */
+
+    --fs-intro: clamp(2.25rem, 7.75vw, 9rem);
+    --fs-h1: clamp(2.25rem, 4.75vw, 3.125rem);
+    --fs-h2: clamp(2rem, 4vw, 2.75rem);
+    --fs-h3: clamp(1.75rem, 2vw, 2rem);
+    --fs-h4: clamp(1.5rem, 2.5vw, 2.25rem);
+    --fs-h5: clamp(1.25rem, 2.25vw, 2.125rem);
+    --fs-h6: clamp(1.125rem, 2vw, 2rem);
+    --fs-nav: clamp(1rem, 1vw, 1.125rem);
+    --fs-text: 1rem; /* 15px */
+    --fs-sm: 0.875rem; /* 14px */
+    --ff-heading:'Montserrat',sans-serif;
+
+    /* display */
+
+    --visible: visible;
+
+
+    /* responsive grid */
+    --grid-gap:3rem;
+    --grid-gap-footer:3rem;
+}
+
+/* reset default box-sizing */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* base styling for entire site */
+
+body {
+    background: var(--bg);
+    color: var(--text);
+
+    font-size: var(--fs-text);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.8px;
+    font-family: 'Lato', sans-serif;
+
+    margin: 0;
+}
+
+
+/* link styling */
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* set margins & line-spacing for all headings/text */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-family: var(--ff-heading);
+}
+
+h1,
+h2 {
+    line-height: 1.2;
+}
+
+h3,
+h4 {
+    line-height: 1.4;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* form elements have the same font-size as the rest of the site */
+
+input,
+button,
+textarea,
+select {
+    font-size: inherit;
+}
+
+/*  -------------------------------- */
+/*  Accessibility ------------------ */
+/*  -------------------------------- */
+
+.sr-only {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    margin: -1;
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.skip-to-content {
+    position: absolute;
+    z-index: 9999;
+    background: transparent;
+    color: black;
+    margin-inline: auto;
+    font-size: 0.875rem;
+    transform: translateY(-120%);
+    transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+    transform: translateY(0);
+}
+
+/*  -------------------------------- */
+/*  Utility ------------------ */
+/*  -------------------------------- */
+
+.container {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    width: min(100% - 10rem, 80rem);
+    margin-inline: auto;
+    min-height: 100vh;
+
+    transition: width 0.3s ease-in-out;
+
+}
+
+.container-pilo{
+    width: min(100% - 10rem, 80rem);
+    margin-inline: auto;
+
+    transition: width 0.3s ease-in-out;
+
+    /* outline: solid red 1px; */
+}
+
+section {
+    min-height: 100vh;
+}
+
+.section-title-gray{
+    color: var(--blue-700);
+}
+.section-title-gray .divider-line {
+    background-color: var(--blue-700);
+  }
+
+.flow * {
+    margin-bottom: 40px;
+}
+
+a + a {
+    margin-inline: 20px;
+}
+
+@media only screen and (max-width: 40rem) {
+    .container {
+        width: min(100% - 3rem, 40rem);
+    }
+}
+
+/*  -------------------------------- */
+/*  Buttons & Links ------------------ */
+/*  -------------------------------- */
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: inherit;
+    color: #fff;
+    font-weight: 400;
+    background-color: var(--blue-400);
+    border: 0.125rem solid #fff;
+    padding: 1rem 1.75rem;
+}
+
+/* styling links to look like buttons */
+
+.btn {
+    display: inline-block;
+
+    color: var(--white);
+    font-weight: 500;
+    line-height: 1;
+
+    padding: 12px 16px;
+    border: solid 2px var(--white);
+    border-radius: 28px;
+
+    background-color: transparent;
+
+    transition: all 0.2s ease-in;
+    text-transform: uppercase;
+}
+
+.btn:hover,
+.btn:focus {
+    color: var(--black);
+    background-color: var(--white);
+
+    
+}
+
+/* ------------
+TYPOGRAPHY ----------
+----------------------*/
+h1{
+    font-size: var(--fs-h1);
+    text-align: center;
+}
+
+
+/*  -------------------------------- */
+/*  Header ------------------ */
+/*  -------------------------------- */
+#header{
+    position: fixed;
+    inset: 0 0 auto ;
+}
+
+
+.header-inner{
+transition: padding 0.3s ease;
+padding-top: 1.5rem;
+padding-bottom: 1.5rem;
+font-family: var(--ff-heading);
+font-weight: 700;
+display: flex;
+justify-content: space-between;
+align-items: center;
+text-transform: uppercase;
+}
+.header-inner.header-inner-active{
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+#logo{font-size: 28px;}
+.primary-nav{
+    display: flex;
+}
+
+nav ul{display: flex;}
+
+nav li{display: flex;
+padding-inline:20px;}
+
+.header-inner a:hover, .header-inner a:focus {
+    color:var(--blue-200)
+}
+
+/*------------ NAV BAR --------- */
+html {
+    scroll-behavior: smooth;
+  }
+
+/*---------------
+--------- INTRO 
+----------*/
+iframe{
+    background-color: var(--blue-300);
+    width: 100%;
+    height: 50vw;
+    border: 0px;
+    overflow-x: hidden;
+    
+
+}
+
+#intro p{font-size: 24px;}
+#intro a{display: inline-block;
+    font-size: 20px;
+    border: #fff 3px solid;}
+
+#intro .container{display: flex;
+    padding-top:0;
+
+}
+
+#intro .intro-container{
+    margin: auto;
+    text-align: center;
+}
+
+/* divider line */
+.divider-icon{
+    font-size: 32px;
+    padding: 0 16px 0 16px;
+}
+
+.divider-line{
+    background-color: #fff;
+    min-width: 7rem;
+    height: 0.25rem;
+    border-radius: 1rem;
+
+}
+.divider{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 20px 0 24px;
+}
+
+.avatar {
+    position: relative;
+    width: 300px;
+    height: 320px;
+    margin-inline: auto;
+  }
+  
+  .avatar img {
+    width: 300px;
+    height: 320px;
+    margin-bottom: 2rem;
+  }
+  
+  .overlay-avatar {
+    position: absolute;
+    inset: 0 0 0 0;
+    margin-bottom: 2rem;
+  }
+  
+  .overlay-avatar img {
+    display: none;
+  }
+  
+  .avatar:hover .overlay-avatar img {
+    display: block;
+    opacity: 1;
+  }
+
+
+.download-resume{
+    margin: 24px 0 0 0;
+}
+
+/*  -------------------------------- */
+/*  Projects ------------------ */
+/*  -------------------------------- */
+#projects .container{
+    padding-top: 3rem;
+    padding-bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+
+
+.project-grid{
+    display: grid;
+    gap: var(--grid-gap);
+    justify-items: center;
+
+}
+
+.project-grid_item{
+    text-align: center;
+}
+
+.project-grid_item h2{
+    padding-top: 1.5rem;
+    font-size: 26px;
+
+}
+
+
+@media only screen and (min-widht: 50rem){
+    .project-grid{
+        grid-template-columns: repeat(2,minmax(0,1fr));
+
+    }
+}
+
+@media only screen and (min-width:65rem){
+    .project-grid{
+        grid-template-columns: repeat(3,minmax(0,1fr));
+    }
+}
+
+.project-avatar-container{
+    display: flex;
+    position: relative;
+}
+
+.project-avatar-container img{
+    width: 100%;
+    max-width: 250px;
+    transition: opacity 0.5s;
+}
+
+.portfolio-btn{
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+    position: absolute;
+    text-align: center;
+    opacity: 0%;
+    background-color: transparent;
+    border-radius: 12px;
+  
+}
+.project-avatar-container:hover img{
+    opacity: 0.5;
+    cursor: pointer;
+}
+.project-avatar-container:hover .portfolio-btn{
+    opacity: 1;
+    background-color: var(--blue-400);
+
+}
+
+/*------------- Projects Pop-up  ---------------*/
+.modal-overlay{
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 9100;
+    background-color: rgba(0,0,0,0.5);
+
+}
+
+.modal{
+    width: 80%;
+    padding: 10px 30px;
+    margin: 60px auto;
+    background-color: #fff;
+    border: 2px solid rgba(0,0,0,0.7);
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.modal h1{
+    color: black;
+}
+
+.close-container{
+    text-align: right;
+}
+
+button.close{
+    color:#6e6e6e;
+    font-size: 68px;
+    line-height: 1;
+    margin-top: 0;
+    padding: 0.5rem;
+    background-color: transparent;
+}
+
+button.close:hover {
+     color: rgba(76,76,76);
+     cursor: pointer;
+     background-color: transparent;
+}
+
+
+/*---------------- Contact Me Section ---------------- */
+
+.contact-form-wrapper {
+    max-width: 50rem;
+    margin-inline: auto;
+  }
+  
+  #contact-form input,
+  #contact-form textarea {
+    display: block;
+    width: 100%;
+    padding: 1.5rem 0.5rem;
+  }
+  
+  /* hide placeholers */
+  #contact-form ::placeholder,
+  #contact-form ::-webkit-input-placeholder {
+    color: white;
+    opacity: 0;
+  }
+  
+  /* set input height so no jump when label transformed */
+  /* also, put label after input/textarea in html so can use '+' selector, then reverse so can add same transform height to labels in form-fields with different heights */
+  #contact-form .form-field {
+    height: 7rem;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  /* set textarea height so no jump when label transformed */
+  #contact-form .form-field-textarea {
+    height: 12rem;
+  }
+  
+  /* padding */
+  #contact-form input,
+  #contact-form textarea {
+    padding-inline: 2rem;
+  }
+  
+  /* default label styling */
+  #contact-form label {
+    display: block;
+    transform: translate(2rem, 3.625rem);
+    font-size: 1.5rem;
+    pointer-events: none;
+    transition: 0.2s ease;
+    color: gray;
+  }
+  
+  /* active label styling when input/textarea in focus */
+  #contact-form input:focus + label,
+  #contact-form textarea:focus + label {
+    display: inline-block;
+    transform: translate(2rem, 2rem);
+    font-size: 15px;
+    padding: 1px;
+  }
+  
+  /* margin */
+  #submit-button {
+    margin-top: 30px;
+  }
+
+
+
+/*  -------------------------------- */
+/*  Footer ------------------ */
+/*  -------------------------------- */
+#footer .container{
+    min-height: 0;
+
+}
+
+.container-footer{
+    padding:5rem ;
+}
+.footer-grid{
+    display: grid ;
+    gap: var(--grid-gap-footer);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+}
+.footer-grid .social{
+    border-radius: 100%;
+    display: inline-flex;
+    width: 3.25rem;
+    height: 3.25rem;
+    justify-content: center;
+    font-size: 1.25rem;
+    align-items: center;
+    color:#f8f9fa;
+    border: solid 2px #f8f9fa;
+    margin: 0.5rem 0.25rem;
+
+}
+.footer-grid .social svg{
+    display: inline-block;
+    height: 1.5rem;
+    overflow: visible;
+    vertical-align: -0.125rem;
+
+}
+/* RESPONSIVE */
+
+/* TABLET SIZE */
+@media (min-width: 40rem) and (max-width: 64.9rem){
+    .projects-grid,
+    .footer-grid{
+        grid-template-columns:1fr 1.5fr;
+        
+    }
+    body{
+        --grid-gap:6rem;
+        --grid-gap-footer:3rem;
+    }
+    /* About Section Span */
+    .footer-grid div:last-of-type{
+        grid-column: span 2;
+        
+    }
+
+}
+
+/* DESKTOP SIZE */
+@media (min-width: 65rem ){
+    .projects-grid,
+    .footer-grid{
+        grid-template-columns: repeat(3,minmax(0,1fr));
+    }
+    body{
+        --grid-gap:6rem;
+        --grid-gap-footer:0;
+    }
+}
+
+
+
+
+
+
+
+/*  -------------------------------- */
+/*  Copyright ------------------ */
+/*  -------------------------------- */
+.copyright{padding: 24px 0;
+text-align: center;}
+
+#header{background-color: var(--blue-500);}
+#intro{background-color: var(--blue-200);}
+#projects{background-color:var(--blue-300);}
+#about{background-color: var(--blue-400);}
+#contact-me{background-color:var(--blue-300);}
+#footer{background-color: var(--blue-500);}
+.copyright{background-color:var(--blue-700);}
