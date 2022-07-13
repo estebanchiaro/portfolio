@@ -63,25 +63,20 @@ window.onscroll = () => {
   });
 };
 
-//----------------- Projects Pop up ----------------------
+//----------------- Nav Bar ----------------------//
 
-// var modal1= document.getElementById('modal1');
-// var btn=document.getElementById('myBtn');
-// var projectModalClose=document.querySelector('.close');
+const nav = document.querySelector('.primary-nav');
+const navToggle = document.querySelector('.menu-toggle');
 
-// btn.onclick= function(){
-//     modal1.style.display= "block";
-//     modal1.setAttribute("data-visible", true);
-// }
+navToggle.addEventListener('click', (e) => {
+    navToggle.classList.toggle('menu-toggle-active');
 
-// projectModalClose.onclick= function(){
-//     modal1.style.display='none';
-//     modal1.setAttribute("data-visible", false);
-// }
-
-// window.onclick = function (e){
-//     if(e.target== modal1){
-//         modal1.style.display='none';
-//         modal1.setAttribute("data-visible", false)
-//     }
-// }
+    const visibility = nav.getAttribute('data-visible');
+    if (visibility === 'false') {
+        nav.setAttribute('data-visible', true);
+        e.setAttribute('aria-expanded', true);
+    } else {
+        nav.setAttribute('data-visible', false);
+        e.setAttribute('aria-expanded', false);
+    }
+});

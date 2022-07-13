@@ -16,7 +16,8 @@
     --blue-500: #04293a;
     --blue-700: #041c32;
     --teal: #19bc9c;
-   
+    --primary:#fff;
+    
 
     /* responsive font sizes */
 
@@ -294,6 +295,113 @@ padding-inline:20px;}
 }
 
 /*------------ NAV BAR --------- */
+.menu-toggle{
+    display: none;
+}
+
+@media only screen and (max-width: 42rem ){
+    .menu-toggle{
+        position: relative;
+        display: block;
+        border: solid #fff 1px;
+        z-index: 9999;
+        
+    }
+   
+
+      .nav{
+        position: relative;
+      }
+
+      .primary-nav{
+        transform: translateY(-100%);
+        position: fixed;
+        inset: 0 0 0 0;
+        height: 100vh;
+        background-color: var(--blue-400);
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        font-size: var(--fs-h1);
+    
+      }
+
+      .primary-nav[data-visible="true"] {
+        
+        transition: 500ms ease;
+        transform: translateY(0);
+      }
+
+
+      .avatar{
+        display: none;
+      }
+    
+      .menu-toggle span {
+        margin: 0 auto;
+        position: relative;
+        top: 1px;
+        transition-duration: 0s;
+        transition-delay: 0.2s;
+        transition: background-color 0.3s;
+        z-index: 9999;
+      }
+      .menu-toggle span:before,
+      .menu-toggle span:after {
+        position: absolute;
+        content: "";
+        transition-property: margin, transform;
+        transition-duration: 0.2s;
+        transition-delay: 0.2s, 0;
+      }
+    
+      .menu-toggle span,
+      .menu-toggle span:before,
+      .menu-toggle span:after {
+        width: 26px;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 4px;
+        display: block;
+        opacity: 1;
+      }
+    
+      .menu-toggle span:before {
+        margin-top: -8px;
+      }
+    
+      .menu-toggle span:after {
+        margin-top: 8px;
+      }
+    
+      .menu-toggle-active span {
+        background: transparent;
+        transition: 0.3s background-color;
+      }
+    
+      .menu-toggle-active span:before,
+      .menu-toggle-active span:after {
+        margin-top: 0;
+        transition-delay: 0, 0.2s;
+        background: var(--primary);
+        transition: 0.3s all;
+        box-shadow: 0 0 20px white;
+      }
+    
+      .menu-toggle-active span:before {
+        transform: rotate(45deg);
+      }
+    
+      .menu-toggle-active span:after {
+        transform: rotate(-45deg);
+      }
+    }
+
+
+
+
 html {
     scroll-behavior: smooth;
   }
