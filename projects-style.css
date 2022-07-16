@@ -8,6 +8,7 @@
     --blue-300: #01afc1;
     --blue-400: #06435e;
     --blue-500: #04293a;
+    --blue-500-transparent: #04293ae7;
     --blue-700: #041c32;
     --teal: #19bc9c;
     --darkgray: #212329;
@@ -119,8 +120,8 @@
 /*--------- Pop-Up Window when clicked---- */
 .img-window{
 width: 100vw;
-height: 100vh;
-background-color: var(--blue-500);
+height: 50vh;
+background-color: var(--blue-500-transparent);
 position: fixed;
 top: 0;
 left: 0;
@@ -133,7 +134,7 @@ align-items: center;
 }
 
 .popup-img{
-    max-height: 80vh;
+    max-height: 50vh;
     max-width: 80vw;
     z-index: 200;
     
