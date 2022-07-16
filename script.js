@@ -10,6 +10,18 @@ $(function () {
     });
 });
 
+//--------- AVATAR IMG CHANGE ------------//
+const avatarContainer = document.querySelector('.avatar')
+const avatarOverlay = document.querySelector('.overlay-avatar')
+
+avatarContainer.addEventListener('touchstart', () => {
+  avatarOverlay.style.display = 'block'
+})
+
+avatarContainer.addEventListener('touchend', () => {
+  avatarOverlay.style.display = 'none'
+})
+
 //------------- IFRAME ---------------------//
 $(window)
   .on('load resize', () => {
@@ -67,6 +79,9 @@ window.onscroll = () => {
 
 const nav = document.querySelector('.primary-nav');
 const navToggle = document.querySelector('.menu-toggle');
+const pageBody= document.querySelector('body');
+const headerNav= document.getElementById('header');
+
 
 navToggle.addEventListener('click', (e) => {
     navToggle.classList.toggle('menu-toggle-active');
@@ -74,9 +89,37 @@ navToggle.addEventListener('click', (e) => {
     const visibility = nav.getAttribute('data-visible');
     if (visibility === 'false') {
         nav.setAttribute('data-visible', true);
-        e.setAttribute('aria-expanded', true);
+        e.target.setAttribute('aria-expanded', true);
+        pageBody.classList.add('nav_open-no_scroll');
+        headerNav.classList.add('nav-bar-open');
+
     } else {
         nav.setAttribute('data-visible', false);
-        e.setAttribute('aria-expanded', false);
+        e.target.setAttribute('aria-expanded', false);
+        pageBody.classList.remove('nav_open-no_scroll');
+        headerNav.classList.remove('nav-bar-open');
     }
 });
+
+//---------------- NAV BAR CLOSE ------------//
+const navLinks = document.querySelector('.nav')
+  
+const focusableElements =
+  'button:not([disabled]), [href]:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), details:not([disabled]), [tabindex]:not([tabindex="-1"])'
+
+const firstFocusableElement = navLinks.querySelectorAll(focusableElements)[0]
+const focusableContent = navLinks.querySelectorAll(focusableElements)
+const lastFocusableElement = focusableContent[focusableContent.length - 1]
+
+const navigationLinks= document.querySelectorAll('.nav-link')
+
+navigationLinks.forEach((link)=>{
+  link.addEventListener('click', ()=> {
+    nav.setAttribute('data-visible', false);
+    navToggle.setAttribute('aria-expanded', false);
+    navToggle.classList.toggle('menu-toggle-active');
+    pageBody.classList.remove('nav_open-no_scroll');
+    headerNav.classList.remove('nav-bar-open');
+  })
+})
+

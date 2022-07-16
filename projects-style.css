@@ -1,6 +1,17 @@
 :root{
-    --darkgray: #212329;
+    /* colors */
+
+    --white: #fff;
+    --black: #000;
+    --blue-100: #c2e3f6;
+    --blue-200: #84dfff;
     --blue-300: #01afc1;
+    --blue-400: #06435e;
+    --blue-500: #04293a;
+    --blue-700: #041c32;
+    --teal: #19bc9c;
+    --darkgray: #212329;
+
     --ff-projects:'Lato', sans-serif;
 
 }
@@ -105,8 +116,28 @@
     transform: translate(-100px,600%) rotate(45deg);
     transition: transform 0.5s;
 }
+/*--------- Pop-Up Window when clicked---- */
+.img-window{
+width: 100vw;
+height: 100vh;
+background-color: var(--blue-500);
+position: fixed;
+top: 0;
+left: 0;
+z-index: 100;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
 
+}
 
+.popup-img{
+    max-height: 80vh;
+    max-width: 80vw;
+    z-index: 200;
+    
+}
 
 /* -----------Responsive----------  */
 @media screen and (min-width: 550px) and (max-width:769px){
