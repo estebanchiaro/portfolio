@@ -119,8 +119,9 @@
 }
 /*--------- Pop-Up Window when clicked---- */
 .img-window{
+
 width: 100vw;
-height: 50vh;
+height: 80vh;
 background-color: var(--blue-500-transparent);
 position: fixed;
 top: 0;
@@ -133,6 +134,24 @@ align-items: center;
 
 }
 
+@media only screen and (max-width:40rem){
+    .img-window{
+        margin-top: 15rem;
+        width: 100vw;
+        height: 50vh;
+        background-color: var(--blue-500-transparent);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        }
+}
+
 .popup-img{
     max-height: 50vh;
     max-width: 80vw;
@@ -140,6 +159,34 @@ align-items: center;
     
 }
 
+.img-btn-next{
+    display: block;
+    font-size: 2rem;
+    padding: 8px 30px;
+    border-radius: 4px;
+    background-color: #000;
+    position: fixed;
+    top:48vh;
+    z-index: 200;
+    color: #fff;
+    cursor: pointer;
+    right: 0;
+}
+
+
+
+.img-btn-prev{
+    display: block;
+    font-size: 2rem;
+    padding: 8px 30px;
+    border-radius: 4px;
+    background-color: #000;
+    position: fixed;
+    top:48vh;
+    z-index: 200;
+    color: #fff;
+    cursor: pointer;
+}
 /* -----------Responsive----------  */
 @media screen and (min-width: 550px) and (max-width:769px){
     .services-cell:nth-child(3n){
