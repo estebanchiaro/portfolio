@@ -50,7 +50,7 @@
     position: relative;
     text-align: center;
     z-index: 1;
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.8);
+    box-shadow: 0px 10px 15px 0px rgba(0,0,0,1);
     
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     cursor: pointer;
@@ -60,7 +60,7 @@
 .services-cell_img{
     object-fit: cover;
     object-position: center;
-    /* border: black 2px solid; */
+
     
 }
 
@@ -187,6 +187,16 @@ align-items: center;
     color: #fff;
     cursor: pointer;
 }
+
+
+/*--------- TEXT OF THE POP-UP ------------ */
+.text{
+color: #fff;
+font-family: var(--ff-projects);
+font-size: 2rem;
+font-weight: 500;
+}
+
 /* -----------Responsive----------  */
 @media screen and (min-width: 550px) and (max-width:769px){
     .services-cell:nth-child(3n){

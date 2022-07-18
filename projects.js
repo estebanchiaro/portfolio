@@ -11,7 +11,7 @@ galleryImages.forEach(function(image, index){
     let newImgWindow= document.createElement('div');
     container.appendChild(newImgWindow);
     newImgWindow.setAttribute('class', 'img-window');
-    newImgWindow.setAttribute('onclick', 'closeImg()')
+    newImgWindow.setAttribute('onclick', 'closeImg()');
 
     let newImg= image.firstElementChild.cloneNode();
     newImgWindow.appendChild(newImg);
@@ -23,6 +23,13 @@ galleryImages.forEach(function(image, index){
       let newNextBtn = document.createElement('a');
       newNextBtn.innerHTML= '<i class="fas fa-chevron-right next"></i>';
       container.appendChild(newNextBtn);
+//------------------------------------- POP- UP TEXT !!!!!! --------------------------------------------------
+      let text= document.createElement('h2');
+      newImgWindow.appendChild(text);
+      text.innerHTML='<h2>Project 1</h2>';
+      text.classList.add('text');
+
+// --------------------------------------------------------------------------------------------------------//
       newNextBtn.setAttribute('class', 'img-btn-next');
       newNextBtn.setAttribute('onclick', 'changeImg(1)');
 
@@ -70,3 +77,6 @@ function changeImg(change){
 
   getLatestOpenedImg= calcNewImg;
 }
+
+
+
