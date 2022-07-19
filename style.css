@@ -510,20 +510,28 @@ html {
 /*  Projects ------------------ */
 /*  -------------------------------- */
 iframe{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
     background-color: var(--blue-300);
-    width: 100%;
-    height: 50vw;
+    width: 100vw;
+    height: 80vh;
     border: 0px;
     overflow-x: hidden;
-    
-
 }
+
+@media only screen and (max-width:510px){
+    iframe{
+        height: 160vh;
+    }
+}
+
 
 #projects .container{
     padding-top: 3rem;
     padding-bottom: 0;
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
 }
 
 
@@ -840,9 +848,9 @@ text-align: center;}
     100%{background-position: 0% 50%}
 
 }
-#intro {     background: linear-gradient(-45deg, var(--blue-300),var(--blue-100), var(--blue-700));
+#intro {    background: linear-gradient(-45deg, var(--blue-700),rgba(46, 205, 223, 0.822), var(--blue-700));
             background-size: 400% 400%;
-            animation: animate 6s ease infinite;
+            animation: animate 5s ease infinite;
 }
 #header{background-color: var(--blue-500);}
 #projects{background-color:var(--blue-300);}
