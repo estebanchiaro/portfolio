@@ -848,7 +848,7 @@ text-align: center;}
     100%{background-position: 0% 50%}
 
 }
-#intro {    background: linear-gradient(-45deg, var(--blue-700),rgba(46, 205, 223, 0.822), var(--blue-700));
+#intro {    background: linear-gradient(-45deg, var(--blue-300),rgba(46, 205, 223, 0.822), white);
             background-size: 400% 400%;
             animation: animate 5s ease infinite;
 }
