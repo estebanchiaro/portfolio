@@ -15,6 +15,7 @@
      />
     <title>EC</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./projects-1-style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -89,8 +90,80 @@
         </div>
     </div>
    
-     <iframe marginheight="1" marginwidth="1" seamless="seamless" scrolling="no" src="./projects-1.html" frameborder="0"></iframe>
+    <!-- ---------------------------------PROJECT SECTION ------------------------ -->
+    
+<div class="row">
+    <div class="column column-1 projects-cell">
+      <span class="project-title">Project 1</span>
+      <img class="column-1_img" src="./imgs/portfolio/img-1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+    </div>
+    <div class="column column-1 projects-cell">
+      <span class="project-title">Project 2</span>
+      <img class="column-1_img" src="./imgs/portfolio/img-2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+    </div>
+    <div class="column column-1 projects-cell">
+      <span class="project-title">Project 3</span>
+      <img class="column-1_img" src="./imgs/portfolio/img-3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+    </div>
+    <div class="column column-1 projects-cell">
+      <span class="project-title">Project 4</span>
+      <img class="column-1_img" src="./imgs/portfolio/img-4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+    </div>
+  </div>
+  
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+  
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <a href="https://sleekandclean.org/" class="btn-project" >Click to See Project</a>
+        <img class="mySlides_img" src="./imgs/portfolio/img-1.jpg">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <a href="./index.html" class="btn-project" >Click to See Project</a>
+        <img class="mySlides_img" src="imgs/portfolio/img-2.jpg" >
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <a href="./index.html" class="btn-project" >Click to See Project</a>
+        <img class="mySlides_img" src="imgs/portfolio/img-3.jpg" >
+      </div>
+      
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <a href="" class="btn-project" >Click to See Project</a>
+        <img class="mySlides_img" src="./imgs/portfolio/img-4.jpg">
+      </div>
+      
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+  
+  
+      <div class="column">
+        <img class="demo cursor" src="./imgs/portfolio/img-1.jpg" style="width:40%" onclick="currentSlide(1)" alt="Sleek & Clean Website">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./imgs/portfolio/img-2.jpg" style="width:40%" onclick="currentSlide(2)" alt="Whac A Mole">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./imgs/portfolio/img-3.jpg" style="width:40%" onclick="currentSlide(3)" alt="Touch - Slider">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./imgs/portfolio/img-4.jpg" style="width:40%" onclick="currentSlide(4)" alt="Memory - Game">
+      </div>
+    </div>
+  </div>
+  
 
+    <!-- ---------------------------------PROJECT SECTION ------------------------ -->
     </div>
 </section>
 <!-- end of projects section -->
@@ -311,6 +384,7 @@
 </footer>
 <!-- end of footer -->
 <script src="./script.js"></script>
+<script src="./projects-1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>
